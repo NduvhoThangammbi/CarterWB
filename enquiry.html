@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry - Joe\'s Plumbing</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Consistent header with navigation menu for functional site-wide navigation -->\n    <header>
+        <h1>Joe\'s Plumbing</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main content for Enquiry form to generate leads (key KPI) -->\n    <main>
+        <h2>Get a Quote</h2>
+        <form action="#" method="post">
+            <label for="name">Name: <input id="name" type="text" required></label><br>
+            <label for="email">Email: <input id="email" type="email" required></label><br>
+            <label for="service">Service: 
+                <select id="service">
+                    <option>Residential Repair</option>
+                    <option>Commercial Install</option>
+                    <option>Emergency</option>
+                </select>
+            </label><br>
+            <label for="message">Details: <textarea id="message"></textarea></label><br>
+            <button type="submit">Send Enquiry</button>
+        </form>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Joe\'s Plumbing. Student: ST10500383</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
