@@ -1,0 +1,352 @@
+/* Joe's Plumbing - Part 2 CSS (Desktop + Responsive) */
+
+/* ============ CSS Reset / Base ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+a {
+  background-color: transparent;
+  color: inherit;
+}
+
+a:active,
+.a:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ============ Theme (colour palette) ============ */
+:root {
+  --bg: #0b1220;
+  --surface: #111c33;
+  --surface-2: #0f1730;
+  --text: #e8eefc;
+  --muted: rgba(232, 238, 252, 0.75);
+
+  --primary: #2dd4bf; /* teal */
+  --primary-2: #60a5fa; /* blue */
+  --accent: #fbbf24; /* amber */
+
+  --border: rgba(232, 238, 252, 0.12);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  --radius: 14px;
+  --container: 1100px;
+}
+
+/* ============ Base Typography ============ */
+body {
+  font-family: Aptos, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% 0%, rgba(45, 212, 191, 0.18), transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgba(96, 165, 250, 0.16), transparent 50%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 1.2vw + 1rem, 1.75rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+li {
+  margin: 0.35rem 0;
+}
+
+/* ============ Layout Structure (Desktop-first) ============ */
+.site-container {
+  width: min(var(--container), 100% - 2rem);
+  margin: 0 auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(11, 18, 32, 0.72);
+  border-bottom: 1px solid var(--border);
+}
+
+header .site-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--text);
+  font-weight: 600;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+nav a:hover {
+  background: rgba(45, 212, 191, 0.12);
+  border-color: rgba(45, 212, 191, 0.4);
+  transform: translateY(-1px);
+}
+
+nav a:focus-visible {
+  outline: 3px solid rgba(45, 212, 191, 0.45);
+  outline-offset: 2px;
+}
+
+nav a[aria-current="page"],
+nav a:active {
+  background: rgba(96, 165, 250, 0.18);
+  border-color: rgba(96, 165, 250, 0.55);
+}
+
+main {
+  padding: 2.25rem 0 2.75rem;
+}
+
+/* Sections / cards */
+main section,
+main article {
+  background: rgba(17, 28, 51, 0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+main .hero {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+main .hero h2 {
+  margin: 0;
+}
+
+main .hero img {
+  border-radius: calc(var(--radius) - 6px);
+  border: 1px solid var(--border);
+}
+
+main section:not(.hero) {
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Description lists */
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 800;
+  color: var(--text);
+  margin-top: 0.65rem;
+}
+
+dd {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+}
+
+/* Form styling */
+form {
+  padding: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(232, 238, 252, 0.18);
+  background: rgba(15, 23, 48, 0.65);
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  border: none;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #041013;
+  font-weight: 900;
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.55);
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0;
+  color: var(--muted);
+}
+
+footer p {
+  margin: 0;
+}
+
+iframe {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+/* ============ Responsive Design (Breakpoints) ============ */
+/* Tablet */
+@media (max-width: 900px) {
+  main {
+    padding: 1.6rem 0 2.25rem;
+  }
+
+  main .hero {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  header .site-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.15rem;
+  }
+
+  nav a {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  main {
+    padding: 1.2rem 0 1.75rem;
+  }
+
+  main .hero {
+    padding: 1.25rem;
+  }
+
+  main section:not(.hero) {
+    padding: 1.1rem;
+  }
+
+  p {
+    font-size: 0.98rem;
+  }
+}
+

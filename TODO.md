@@ -1,1 +1,2 @@
-# Git 5 Commits TODO&#10;&#10;## Steps:&#10;- \[x\] Step 1: Initial commit (all files)&#10;- [ ] Step 2: Enhance index.html (meta + hero CTA)&#10;- \[x\] Step 3: Update style.css (header/nav/footer styles)&#10;- [ ] Step 4: Update script.js (active nav highlight)&#10;- [ ] Step 5: Update README.md (git changelog)&#10;- [ ] Verify: git log --oneline (5 commits)&#10;&#10;Last Updated: Starting execution
+- [x] Step 5: Update README.md (git changelog)
+
