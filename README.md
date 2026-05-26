@@ -27,8 +27,15 @@ Dev free, hosting $5/mo.
 See proposal.html
 
 ## Changelog
-- Initial files
-- Refs added
+- Initial multi-page site structure created: index.html, about.html, services.html, enquiry.html, contact.html
+- Linked external stylesheet (css/style.css) across all pages for consistent desktop styling
+- Implemented desktop-first CSS: theme variables, reset/base typography, cards/sections, form styling, footer styling
+- Added interactive pseudo-class states for navigation links and buttons (:hover, :focus-visible, :active)
+- Implemented responsive design breakpoints in css/style.css:
+  - max-width: 900px (tablet layout adjustments)
+  - max-width: 520px (mobile header/nav + spacing adjustments)
+- Fixed services.html semantics to include a proper dl/dt/dd block so CSS applies correctly
+- Updated contact.html to use a real embedded Google Maps iframe instead of a placeholder map URL
 
 ## Part 2: Designing the visuals (CSS Styling + Responsive)
 ### Desktop CSS implementation
