@@ -5,7 +5,8 @@
 
 - [x] Step 5: Update README.md (git changelog)
 - [x] Step 6: Confirm GitHub descriptive commits (outside this repo update)
-- [ ] Step 7: Deploy / go live (Netlify/GitHub Pages/hosting)
+- [x] Step 7: Deploy / go live (Netlify/GitHub Pages/hosting)
+
 
 
 
