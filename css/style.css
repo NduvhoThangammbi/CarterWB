@@ -180,33 +180,64 @@ main {
 
 /* Sections / cards */
 main section,
-main article {
+main article,
+.page__section {
   background: rgba(17, 28, 51, 0.75);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
-main .hero {
-  padding: 2rem;
+.page {
+  padding: 0;
+}
+
+.page__section {
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.page__section:first-child {
+  margin-top: 0;
+}
+
+/* Reusable responsive layout helpers */
+.content-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 1.25rem;
   align-items: center;
 }
 
-main .hero h2 {
-  margin: 0;
+.content-grid--hero {
+  grid-template-columns: 1fr 1fr;
 }
 
-main .hero img {
+.content-grid--contact {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.img-card {
   border-radius: calc(var(--radius) - 6px);
   border: 1px solid var(--border);
+  overflow: hidden;
 }
 
-main section:not(.hero) {
-  padding: 1.5rem;
-  margin-top: 1rem;
+.img-card img {
+  border-radius: 0;
+}
+
+.map-card iframe {
+  margin-top: 0;
+}
+
+/* Hero */
+.hero {
+  padding: 2rem;
+}
+
+.hero h2 {
+  margin: 0;
 }
 
 /* Description lists */
@@ -226,8 +257,8 @@ dd {
 }
 
 /* Form styling */
-form {
-  padding: 1.5rem;
+.form {
+  padding: 0;
 }
 
 label {
@@ -252,6 +283,13 @@ textarea {
 textarea {
   min-height: 120px;
   resize: vertical;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(45, 212, 191, 0.45);
+  outline-offset: 2px;
 }
 
 button {
@@ -296,7 +334,7 @@ iframe {
   border-radius: var(--radius);
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 /* ============ Responsive Design (Breakpoints) ============ */
@@ -306,12 +344,16 @@ iframe {
     padding: 1.6rem 0 2.25rem;
   }
 
-  main .hero {
+  .content-grid {
     grid-template-columns: 1fr;
   }
 
   nav ul {
     justify-content: center;
+  }
+
+  .hero {
+    padding: 1.5rem;
   }
 }
 
@@ -337,16 +379,26 @@ iframe {
     padding: 1.2rem 0 1.75rem;
   }
 
-  main .hero {
+  .hero {
     padding: 1.25rem;
   }
 
-  main section:not(.hero) {
+  .page__section {
     padding: 1.1rem;
   }
 
   p {
     font-size: 0.98rem;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.7rem 0.85rem;
+  }
+
+  label {
+    margin-bottom: 0.25rem;
   }
 }
 
